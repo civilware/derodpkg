@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/chzyer/readline"
+	"github.com/docopt/docopt-go"
 
 	"github.com/deroproject/derohe/block"
 	"github.com/deroproject/derohe/blockchain"
@@ -79,12 +80,16 @@ func InitializeDerod(initparams map[string]interface{}) (chain *blockchain.Block
 	runtime.MemProfileRate = 0
 	var err error
 
+	globals.Arguments, err = docopt.Parse(command_line, nil, true, config.Version.String(), false)
+
 	// Default testnet to false if it is not defined, else initnetwork cannot be ran within globals.Initialize()
 	if initparams["--testnet"] == nil {
 		initparams["--testnet"] = false
 	}
 
-	globals.Arguments = initparams
+	for k, v := range initparams {
+		globals.Arguments[k] = v
+	}
 
 	// We need to initialize readline first, so it changes stderr to ansi processor on windows
 	l, err = readline.NewEx(&readline.Config{
@@ -105,7 +110,7 @@ func InitializeDerod(initparams map[string]interface{}) (chain *blockchain.Block
 	defer l.Close()
 
 	globals.InitializeLog(l.Stdout(), &lumberjack.Logger{
-		Filename:   "EngramDerod" + ".log",
+		Filename:   "derodpkg" + ".log",
 		MaxSize:    100, // megabytes
 		MaxBackups: 2,
 	})
