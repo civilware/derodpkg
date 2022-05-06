@@ -176,6 +176,7 @@ func InitializeDerod(initparams map[string]interface{}) (chain *blockchain.Block
 		globals.Arguments["--p2p-bind"] = ":0"
 		logger.Info("Disabling P2P server since we are using socks proxy")
 	}
+
 	return
 }
 
@@ -231,6 +232,15 @@ func StartDerod(chain *blockchain.Blockchain) (rpcserver *derodrpc.RPCServer) {
 		}
 	}
 	globals.Cron.Start() // start cron jobs
+
+	// This tiny goroutine continuously updates status as required
+	go func() {
+		for {
+			// Must keep miner count - getwork server uses miner count value to loop through and send jobs
+			derodrpc.CountMiners()
+			time.Sleep(1 * time.Second)
+		}
+	}()
 
 	setPasswordCfg := l.GenPasswordConfig()
 	setPasswordCfg.SetListener(func(line []rune, pos int, key rune) (newLine []rune, newPos int, ok bool) {
