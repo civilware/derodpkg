@@ -109,8 +109,9 @@ func InitializeDerod(initparams map[string]interface{}) (chain *blockchain.Block
 	}
 	defer l.Close()
 
+	exename, _ := os.Executable()
 	globals.InitializeLog(l.Stdout(), &lumberjack.Logger{
-		Filename:   "derodpkg" + ".log",
+		Filename:   exename + "_daemon" + ".log",
 		MaxSize:    100, // megabytes
 		MaxBackups: 2,
 	})
