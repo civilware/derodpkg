@@ -109,9 +109,17 @@ func InitializeDerod(initparams map[string]interface{}) (chain *blockchain.Block
 	}
 	defer l.Close()
 
+	var network string
+	switch globals.IsMainnet() {
+	case false:
+		network = "testnet"
+	default:
+		network = "mainnet"
+	}
+
 	exename, _ := os.Executable()
 	globals.InitializeLog(l.Stdout(), &lumberjack.Logger{
-		Filename:   exename + "_daemon" + ".log",
+		Filename:   exename + "_daemon_" + network + ".log",
 		MaxSize:    100, // megabytes
 		MaxBackups: 2,
 	})
