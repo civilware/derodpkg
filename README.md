@@ -4,6 +4,11 @@ Importable package written in Golang to run DERO Daemon as a service within othe
 # Using In Your Application/Service
 Derod starts out with a subset of parameters. It is important to either surface a way to pass custom parameters or pre-define a list of parameters and their respective values. You can reference some options here: https://github.com/deroproject/derohe/blob/main/cmd/derod/main.go#L58
 
+## Install
+```
+go install github.com/civilware/derodpkg
+```
+
 ## Importing DERO Daemon Package
 You can either just import directly to the /cmd directory or define a name to leverage such as derodpkg for the import directory
 

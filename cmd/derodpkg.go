@@ -93,7 +93,6 @@ func InitializeDerod(initparams map[string]interface{}) (chain *blockchain.Block
 
 	// We need to initialize readline first, so it changes stderr to ansi processor on windows
 	l, err = readline.NewEx(&readline.Config{
-		//Prompt:          "\033[92mDERO:\033[32m»\033[0m",
 		Prompt:          "\033[92mDERO:\033[32m>>>\033[0m ",
 		HistoryFile:     filepath.Join(os.TempDir(), "derod_readline.tmp"),
 		AutoComplete:    completer,
