@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/chzyer/readline v1.5.1
-	github.com/deroproject/derohe v0.0.0-20230319083715-8d446afdaef8
+	github.com/deroproject/derohe v0.0.0-20230604143809-765b2db1f482
 	github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815
 	github.com/go-logr/logr v1.2.3
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0

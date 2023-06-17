@@ -37,6 +37,8 @@ github.com/deroproject/derohe v0.0.0-20230219151438-e855701f67c9 h1:mIAzAGimYGUj
 github.com/deroproject/derohe v0.0.0-20230219151438-e855701f67c9/go.mod h1:EWHh1VkXRnCHvyGML98kXhngDFYebmOhk/9kZ1ATJ1c=
 github.com/deroproject/derohe v0.0.0-20230319083715-8d446afdaef8 h1:SVHumIAXchEkVVASdxV8ufbR9nqZH1W0fjZV3k5A7bg=
 github.com/deroproject/derohe v0.0.0-20230319083715-8d446afdaef8/go.mod h1:EWHh1VkXRnCHvyGML98kXhngDFYebmOhk/9kZ1ATJ1c=
+github.com/deroproject/derohe v0.0.0-20230604143809-765b2db1f482 h1:2BWx64tGzPOgI/po7rwHjfKelalCraKNmzur6uRTTfw=
+github.com/deroproject/derohe v0.0.0-20230604143809-765b2db1f482/go.mod h1:EWHh1VkXRnCHvyGML98kXhngDFYebmOhk/9kZ1ATJ1c=
 github.com/deroproject/graviton v0.0.0-20220130070622-2c248a53b2e1 h1:nsiNx83HYmRmYpYO37pUzSTmB7p9PFtGBl4FyD+a0jg=
 github.com/deroproject/graviton v0.0.0-20220130070622-2c248a53b2e1/go.mod h1:a4u6QJtGGIADg1JwujD77UtaAyhIxg14+I0C7xjyQcc=
 github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815 h1:bWDMxwH3px2JBh6AyO7hdCn/PkvCZXii8TGj7sbtEbQ=
